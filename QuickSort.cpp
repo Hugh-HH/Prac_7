@@ -6,6 +6,11 @@ std::vector<int> QuickSort::sort(std::vector<int> list) {
         return list;
     }
 
+    int temp = list.at(2);
+    list.at(2) = list.at(list.size());
+    list.at(list.size()) = temp;
+
+
     std::vector<int> less; 
     std::vector<int> greater;
     int piVal = 0;
