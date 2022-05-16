@@ -8,27 +8,44 @@ std::vector<int> QuickSort::sort(std::vector<int> list) {
 
     std::vector<int> less; 
     std::vector<int> greater;
+    int piVal = 0;
+    int pivot = 0;
+    
+    if (list.size() >= 1) {
+        return list;
+    }
 
     if (list.size() <= 2) {
-        int pivot = std::round(list.size()/2);
+        pivot = 0;
+        piVal = list.at(0);
+
     } else {
-        int pivot = 3;
+        pivot = 2;
+        piVal = list.at(2);
     }
     
 
     for (int i = 0; i < list.size(); i++) {
-        if (list.at(i) <= pivot) {
-            less.pushback(list.at(i));
+        if (i != pivot) {
+            if (list.at(i) <= pivot) {
+                less.push_back(list.at(i));
+            }
+            if (list.at(i) > pivot) {
+                greater.push_back(list.at(i));
+            }
         }
-        if (list.at(i) > pivot) {
-            greater.pushback(list.at(i));
-        }
-        
     }
-    
-    std::vector<int> out;
-    
 
-    return 
+    less = sort(less);
+
+    less.push_back(piVal);
+
+    greater = sort(greater);
+
+    for(int i = 0; i < greater.size(); i++) {
+        less.push_back(greater.at(i));
+    }
+
+    return less; 
     
 }
