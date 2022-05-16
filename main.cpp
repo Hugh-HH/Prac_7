@@ -2,6 +2,10 @@
 #include "QuickSort.h"
 #include "RecursiveBinarySearch.h"
 #include <iostream>
+#include <vector>
+#include <string>
+#include <sstream>   
+
 int main() {
 
     // BubbleSort bubblesort;
@@ -14,15 +18,43 @@ int main() {
     //     std::cout << vec.at(i) << " ";
     // }
 
-    std::vector<int> vec = {1, 3, 5, 4, -5, 100, 7777, 2014};
+    // std::vector<int> vec = {1, 3, 5, 4, -5, 100, 7777, 2014};
 
-    QuickSort quick;
+    // QuickSort quick;
 
-    RecursiveBinarySearch recBS;
+    // RecursiveBinarySearch recBS;
 
-    vec = quick.sort(vec);
+    // vec = quick.sort(vec);
 
-    recBS.search(vec, 1);
+    // recBS.search(vec, 1);
+
+    Sort* quick = new QuickSort();
+    RecursiveBinarySearch* rec = new RecursiveBinarySearch();
+
+    std::string str;
+    std::vector<int> input;
 
 
+    std::getline(std::cin, str);
+
+    std::stringstream ss(str); 
+        for (int i; ss >> i;) 
+            input.push_back(i);
+
+    quick->sort(input); 
+
+
+    if(rec->search(input, 1) == true) {
+
+        for(int i = 0; i < input.size(); i++) {
+            std::cout << "true" << input.at(i) << ' ';
+        }
+
+    }
+    else {
+        for(int i = 0; i < input.size(); i++) {
+        std::cout << "false" << input.at(i) << ' ';
+        }
+    }
 }
+
