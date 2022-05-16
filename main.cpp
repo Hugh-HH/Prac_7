@@ -43,18 +43,22 @@ int main() {
 
     quick->sort(input); 
 
-
+    
     if(rec->search(input, 1) == true) {
 
         for(int i = 0; i < input.size(); i++) {
-            std::cout << "true" << input.at(i) << ' ';
+            std::cout << input.at(i) << ' ';
         }
+        std::cout << std::endl;
+        std::cout << "true";
 
     }
     else {
         for(int i = 0; i < input.size(); i++) {
-        std::cout << "false" << input.at(i) << ' ';
+        std::cout << input.at(i) << ' ';
         }
+        std::cout << std::endl;
+        std::cout << "false";
     }
 }
 
