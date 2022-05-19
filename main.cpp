@@ -37,10 +37,6 @@ int main() {
 
     std::getline(std::cin, str);
 
-    int temp = input.at(5);
-    input.at(5) = input.at(input.size());
-    input.at(input.size()) = temp;
-
     std::stringstream ss(str); 
         for (int i; ss >> i;) 
             input.push_back(i);
