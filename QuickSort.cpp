@@ -27,12 +27,12 @@ std::vector<int> QuickSort::sort(std::vector<int> list) {
 
     for (int i = 0; i < list.size(); i++) {
         if (i != pivot) {
-            if (list.at(i) <= pivot) {
+            if (list.at(i) <= piVal) {
                 less.push_back(list.at(i));
             }
-            if (list.at(i) > pivot) {
+            if (list.at(i) > piVal) {
                 greater.push_back(list.at(i));
-            }
+            }   
         }
     }
 
