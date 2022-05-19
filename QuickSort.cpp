@@ -11,7 +11,7 @@ std::vector<int> QuickSort::sort(std::vector<int> list) {
     int piVal = 0;
     int pivot = 0;
     
-    if (list.size() >= 1) {
+    if (list.size() <= 1) {
         return list;
     }
 
