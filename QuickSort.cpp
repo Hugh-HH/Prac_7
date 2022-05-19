@@ -1,5 +1,6 @@
 #include "QuickSort.h"
 #include <cmath>
+#include <iostream>
 
 std::vector<int> QuickSort::sort(std::vector<int> list) {
     if (list.size() <= 1) {
@@ -12,6 +13,7 @@ std::vector<int> QuickSort::sort(std::vector<int> list) {
     int pivot = 0;
     
     if (list.size() <= 1) {
+            std::cout << ' HERE ';
         return list;
     }
 
@@ -45,7 +47,7 @@ std::vector<int> QuickSort::sort(std::vector<int> list) {
     for(int i = 0; i < greater.size(); i++) {
         less.push_back(greater.at(i));
     }
-
+        std::cout << ' here ';
     return less; 
     
 }

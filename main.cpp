@@ -41,12 +41,12 @@ int main() {
         for (int i; ss >> i;) 
             input.push_back(i);
 
-    quick->sort(input); 
+    input = quick->sort(input); 
 
     
     if(rec->search(input, 1) == true) {
         std::cout << std::endl;
-        std::cout << "true";
+        std::cout << "true ";
         
         for(int i = 0; i < input.size(); i++) {
             std::cout << input.at(i) << ' ';
@@ -56,10 +56,10 @@ int main() {
     }
     else {
         std::cout << std::endl;
-        std::cout << "false";
+        std::cout << "false ";
 
         for(int i = 0; i < input.size(); i++) {
-        std::cout << input.at(i) << ' ';
+            std::cout << input.at(i) << ' ';
         }
         
     }
